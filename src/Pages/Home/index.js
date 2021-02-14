@@ -26,7 +26,7 @@ export default function Home() {
   const [amountPairs, setAumontPairs] = useState(10);
   const classes = useStyles();
   const MIN_PAIRS = 2;
-  const MAX_PAIRS = 62;
+  const MAX_PAIRS = 11;
 
   const validAmountParis = value => {
     if(value < MIN_PAIRS) return MIN_PAIRS;

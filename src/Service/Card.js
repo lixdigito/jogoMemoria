@@ -48,9 +48,10 @@ function SortAumontPairs(list, amountPairs) {
 }
 
 function GerateListImages() {
-  const path = 'Assets/Images/CardPictures';
-  const listJpeg = GerateListImagesGeneric(path,'a','a','jpeg',54);
-  const listPng = GerateListImagesGeneric(path,'b','b','png',8);
+  const path = 'Assets/Images/CardFrench';
+  //const listJpeg = GerateListImagesGeneric(path,'a','a','jpeg',54);
+  const listJpeg = [];
+  const listPng = GerateListImagesGeneric(path,'A','B','png',11);
   return [...listJpeg, ...listPng]
 } 
 
