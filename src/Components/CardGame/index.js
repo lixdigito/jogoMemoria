@@ -31,7 +31,7 @@ export default function CardGame(props) {
     <img src={card.picture} />
   </div>);
 
-  const renderCardBack = () => (<div className={classes.cardBack}></div>)
+  const renderCardBack = () => (<div className={classes.cardBack}><img src="Assets/Images/CardFrench/capacapa.png" /></div>)
 
   const handleClick = () => {
     if (!blockClick) {
