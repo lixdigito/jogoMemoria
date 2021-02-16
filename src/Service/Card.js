@@ -27,8 +27,8 @@ function GerateDataListCards(listPaths) {
   return [...resultList];
 }
 
-export function GetDataCards(amountPairs) {
-  const listPaths = GerateListImages();
+export function GetDataCards(amountPairs, themeId) {
+  const listPaths = GerateListImages(themeId);
   const listLimitedPairs = SortAumontPairs(listPaths, amountPairs);
   const list = GerateDataListCards(listLimitedPairs);
   const listShuffle = ShuffleCards(list);
@@ -47,12 +47,10 @@ function SortAumontPairs(list, amountPairs) {
   return listResult;
 }
 
-function GerateListImages() {
-  const path = 'Assets/Images/CardFrench';
-  //const listJpeg = GerateListImagesGeneric(path,'a','a','jpeg',54);
-  const listJpeg = [];
-  const listPng = GerateListImagesGeneric(path,'A','B','png',11);
-  return [...listJpeg, ...listPng]
+function GerateListImages(themeId) {
+  const theme = themesList[themeId];
+  const listPng = GerateListImagesGeneric(theme.path,theme.imageName,theme.wordName,theme.extension,theme.maxValue);
+  return [...listPng]
 } 
 
 function GerateListImagesGeneric(path, nameFirst, nameSecond, extension, size) {
@@ -83,3 +81,46 @@ function ShuffleCards(list) {
   }
   return listResult;
 }
+
+export const themesList = [
+  {
+    id: 0,
+    value: 0,
+    name: 'Objeto',
+    path: 'Assets/Images/CardFrench/Object',
+    imageName: 'A',
+    wordName: 'B',
+    extension: 'png',
+    maxValue: 11
+  },
+  {
+    id: 1,
+    value: 1,
+    name: 'Comida',
+    path: 'Assets/Images/CardFrench/Food',
+    imageName: 'A',
+    wordName: 'B',
+    extension: 'png',
+    maxValue: 24
+  },
+  {
+    id: 2,
+    value: 2,
+    name: 'Vestuário',
+    path: 'Assets/Images/CardFrench/Clothing',
+    imageName: 'A',
+    wordName: 'B',
+    extension: 'png',
+    maxValue: 19
+  },
+  {
+    id: 3,
+    value: 3,
+    name: 'Cor',
+    path: 'Assets/Images/CardFrench/Color',
+    imageName: 'A',
+    wordName: 'B',
+    extension: 'png',
+    maxValue: 12
+  }
+]

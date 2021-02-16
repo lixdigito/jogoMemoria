@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 export default function Game(props) {
-  const {closeGame, amountPairs} = props;
+  const {closeGame, amountPairs, themeId } = props;
   const [listCards, setListCards] = useState([]);
   const [blockClick, setBlockClick] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +32,7 @@ export default function Game(props) {
   }, []);
 
    const GetCardsCame = () => {
-    const data = GetDataCards(amountPairs);
+    const data = GetDataCards(amountPairs, themeId);
     setListCards([...data]);
    }
 
