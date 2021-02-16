@@ -16,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SimpleSelect(props) {
-  const {optionsList, setOption} = props;
+  const {optionsList, setOption, defaulValue} = props;
   const classes = useStyles();
-  const [state, setState] = useState(optionsList.length ? optionsList[0] : {value: -1});
+  const [state, setState] = useState(defaulValue > 0 ? optionsList[0] : {value: defaulValue});
 
   useEffect(() => {
-    setOption(state);
+    setOption(state.value);
   }, [state]);
 
   const handleChange = (event) => {
