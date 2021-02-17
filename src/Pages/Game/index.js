@@ -9,6 +9,7 @@ const useStyles = makeStyles({
   listCards: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'center',
     margin: '20px'
     
   },
